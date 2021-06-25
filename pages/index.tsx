@@ -1,28 +1,25 @@
-import { GetStaticProps } from 'next'
+import useSWR from 'swr'
 import { useState } from 'react'
 
 import Doggies from 'components/Doggies'
 import DoggyDeets from 'components/DoggyDeets'
 
-export default function Home({
-  data,
-}: {
-  data: {
-    id: number
-    name: string
-    breed_group: string
-    bred_for: string
-    height: object
-    life_span: string
-    reference_image_id: string
-    temperament: string
-    weight: object
-  }[]
-}) {
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+export default function Home() {
+  const { data, error } = useSWR('/api/dogs', fetcher)
+  console.log('data', data)
   const [currentDog, setCurrentDog] = useState(null)
-  const sortedDogsByName = [...data].sort((a, b) =>
-    b.name.localeCompare(a.name)
-  )
+  let sortedDogsByName
+
+  if (data) {
+    sortedDogsByName = [...data].sort((a, b) =>
+      b.name.localeCompare(a.name)
+    )
+  }
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
 
   return (
     <div className="layout">
@@ -30,16 +27,4 @@ export default function Home({
       <DoggyDeets currentDog={currentDog} />
     </div>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const endPoint = 'http://localhost:3000/dogs.json'
-    const res = await fetch(endPoint)
-    const data = await res.json()
-
-    return { props: { data } }
-  } catch {
-    return { notFound: true }
-  }
 }
