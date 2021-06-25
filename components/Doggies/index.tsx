@@ -12,16 +12,15 @@ export default function Doggies({
   return (
     <aside>
       {data.map((dog) => (
-        <div key={dog.id}>
+        <div className="card" key={dog.id}>
           <div onClick={() => setCurrentDog(dog)}>
-            <div>
+            <p>
               <b>Name:</b> {dog.name ? dog.name : 'N/A'}
-            </div>
-            <div>
+            </p>
+            <p>
               <b>Breed group:</b> {dog.breed_group ? dog.breed_group : 'N/A'}
-            </div>
+            </p>
           </div>
-          <br />
         </div>
       ))}
     </aside>

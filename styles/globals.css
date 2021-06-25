@@ -1,3 +1,9 @@
+:root {
+  --bd-color: rgb(0, 0, 0);
+  --layout-gap: 2.5rem;
+  --padding: 1.5rem;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,9 +25,26 @@ a {
 .layout {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-gap: var(--layout-gap);
   height: 100vh;
+  padding: var(--layout-gap);
 }
 
 aside {
   overflow: auto;
+}
+
+.card {
+  padding: var(--padding);
+  border: 1px solid var(--bd-color);
+  cursor: pointer;
+}
+
+.card:not(:last-child) {
+  margin-bottom: var(--padding);
+}
+
+.deets {
+  border: 1px solid var(--bd-color);
+  padding: var(--padding);
 }
