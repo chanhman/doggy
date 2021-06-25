@@ -8,7 +8,6 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Home() {
   const { data, error } = useSWR('/api/dogs', fetcher)
-  console.log('data', data)
   const [currentDog, setCurrentDog] = useState(null)
   let sortedDogsByName
 
