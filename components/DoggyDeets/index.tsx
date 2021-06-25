@@ -1,4 +1,14 @@
-export default function DoggyDeets1({ currentDog }) {
+export default function DoggyDeets1({
+  currentDog,
+}: {
+  currentDog: {
+    temperament: string
+    weight: {
+      metric: string
+    }
+    bred_for: string
+  }
+}) {
   return (
     <div>
       <div>
