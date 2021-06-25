@@ -15,7 +15,9 @@ export default function Doggies({
     <aside>
       {data.map((dog) => (
         <div
-          className={`card ${currentDog.id == dog.id ? 'active' : ''}`}
+          className={`card ${
+            currentDog && currentDog.id == dog.id ? 'active' : ''
+          }`}
           key={dog.id}
           onClick={() => setCurrentDog(dog)}
         >
