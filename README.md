@@ -1,10 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## To-do
+## To-do's to lvl up
 - ✅ Create separate components
 - ✅ Convert to TS
 - Add testing
 - Create load more pagination
+- Add search
 - Style the app
 
 ## Getting Started
