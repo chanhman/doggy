@@ -1,4 +1,14 @@
-export default function Doggies({data, setCurrentDog}) {
+export default function Doggies({
+  data,
+  setCurrentDog,
+}: {
+  data: {
+    id: number
+    name: string
+    breed_group: string
+  }[],
+  setCurrentDog: (obj: object) => void;
+}) {
   return (
     <aside>
       {data.map((dog) => (

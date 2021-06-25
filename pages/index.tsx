@@ -4,7 +4,21 @@ import { useState } from 'react'
 import Doggies from 'components/Doggies'
 import DoggyDeets from 'components/DoggyDeets'
 
-export default function Home({ data }) {
+export default function Home({
+  data,
+}: {
+  data: {
+    id: number
+    name: string
+    breed_group: string
+    bred_for: string
+    height: object
+    life_span: string
+    reference_image_id: string
+    temperament: string
+    weight: object
+  }[]
+}) {
   const [currentDog, setCurrentDog] = useState(null)
   const sortedDogsByName = [...data].sort((a, b) =>
     b.name.localeCompare(a.name)
@@ -18,7 +32,7 @@ export default function Home({ data }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const endPoint = 'http://localhost:3000/dogs.json'
     const res = await fetch(endPoint)
