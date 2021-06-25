@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -11,6 +15,13 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 100vh;
+}
+
+aside {
+  overflow: auto;
 }
