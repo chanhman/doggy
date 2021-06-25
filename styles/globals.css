@@ -1,5 +1,7 @@
 :root {
-  --bd-color: rgb(0, 0, 0);
+  --bd-color: #eaeaea;
+  --bd-width: 0.0625rem;
+  --bd-radius: 0.5rem;
   --layout-gap: 2.5rem;
   --padding: 1.5rem;
 }
@@ -16,11 +18,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
-
 
 .layout {
   display: grid;
@@ -32,12 +37,24 @@ a {
 
 aside {
   overflow: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .card {
   padding: var(--padding);
-  border: 1px solid var(--bd-color);
+  background-color: #fff;
+  border: var(--bd-width) solid var(--bd-color);
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0.25rem 1rem 0;
+  border-radius: var(--bd-radius);
   cursor: pointer;
+  transition: all 0.125s ease-in-out;
+}
+
+.card.active,
+.card:hover {
+  border-color: #000;
+  box-shadow: none;
 }
 
 .card:not(:last-child) {
@@ -45,6 +62,19 @@ aside {
 }
 
 .deets {
-  border: 1px solid var(--bd-color);
-  padding: var(--padding);
+  padding: calc(var(--padding) * 2);
+  background-color: #fff;
+  border: var(--bd-width) solid var(--bd-color);
+  border-radius: var(--bd-radius);
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0.25rem 1rem 0;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+  color: #8a8a8a;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  line-height: 0.875rem;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
