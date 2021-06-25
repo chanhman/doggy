@@ -27,7 +27,7 @@ export default function Home({
   return (
     <div className="layout">
       <Doggies data={sortedDogsByName} setCurrentDog={setCurrentDog} />
-      {currentDog ? <DoggyDeets currentDog={currentDog} /> : null}
+      <DoggyDeets currentDog={currentDog} />
     </div>
   )
 }
