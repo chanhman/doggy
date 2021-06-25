@@ -2,9 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## To-do
 - ✅ Create separate components
-- Convert to TS
-- Create load more pagination
+- ✅ Convert to TS
 - Add testing
+- Create load more pagination
 - Style the app
 
 ## Getting Started
