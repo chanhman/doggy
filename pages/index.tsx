@@ -12,9 +12,7 @@ export default function Home() {
   let sortedDogsByName
 
   if (data) {
-    sortedDogsByName = [...data].sort((a, b) =>
-      b.name.localeCompare(a.name)
-    )
+    sortedDogsByName = [...data].sort((a, b) => b.name.localeCompare(a.name))
   }
 
   if (error) return <div>Failed to load</div>
@@ -22,7 +20,11 @@ export default function Home() {
 
   return (
     <div className="layout">
-      <Doggies data={sortedDogsByName} setCurrentDog={setCurrentDog} />
+      <Doggies
+        data={sortedDogsByName}
+        setCurrentDog={setCurrentDog}
+        currentDog={currentDog}
+      />
       <DoggyDeets currentDog={currentDog} />
     </div>
   )

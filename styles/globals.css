@@ -51,6 +51,7 @@ aside {
   transition: all 0.125s ease-in-out;
 }
 
+.card.active,
 .card:hover {
   box-shadow: none;
 }
